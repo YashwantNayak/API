@@ -31,16 +31,16 @@ import { GlobalSettingsModule } from './global-settings/global-settings.module';
 import { BrokerPackagesModule } from './broker-packages/broker-packages.module';
 import { ReportModule } from './report/report.module';
 import { OtpModule } from './otp/otp.module';
-import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
-import { join } from 'path';
+// import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
+// import { join } from 'path';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     MongooseModule.forRoot(process.env.MONGO_URL),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'), // serve static assets
-    }),
+    // ServeStaticModule.forRoot({
+    //   rootPath: join(__dirname, '..', 'public'), // serve static assets
+    // }),
     PropertyModule,
     UsersModule,
     BrokersModule,
